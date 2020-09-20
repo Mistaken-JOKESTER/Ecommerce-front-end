@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MMart</title>
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./coustomStylesIndex.css">
+</head>
+
+<body class="frontPage">
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark text-white sticky-md-top">
+    <div class="container-fluid">
+      <a class="navbar-brand logo"><img src="./pics/logo.png" alt="" srcset=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" href="./Marketplace/market.html">Market</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- welcomeText -->
+  <div class="container-fluid bg-light">
+    <div class="row">
+      <div class="col-md-12 text-black welcomeText">
+        <figure class="text-center text-break">
+          <blockquote class="blockquote lead font-weight-bold">
+            <p class="h1 welcomeText">Welcome to M-Mart, a new way of shoping</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            Made by <cite title="Source Title">Ankit Sharma</cite>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <div class="conatiner">
+    <div class="row">
+      <div class="col-sm-2"></div>
+      <div class="col-sm-8">
+        <div id='error'></div>
+      </div>
+      <div class="col-sm-2"></div>
+    </div>
+  </div>
+
+
+
+
+  <div class="conatiner">
+    <div id='Welcome' class="text-center text-light">
+      hello
+    </div>
+  </div>
+  <!-- ------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- regestion and login buttons -->
+  <div class="container-fluid text-center text-light" id="reglog">
+    <div class="row">
+      <div class="col-md-6 reglog">
+        <h1>Buyer</h1>
+        <p>Want to buy some goods..</p>
+        <button type="button" class="btn btn-primary" id="bl">login</button>
+        <button type="button" class="btn btn-primary" id="br">Register</button>
+      </div>
+      <div class="col-md-6 reglog">
+        <h1>Seller</h1>
+        <p>Want to sell some goods..</p>
+        <button type="button" class="btn btn-success" id="sl">Login</button>
+        <button type="button" class="btn btn-success" id="sr">Register</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ------------------------------------------------------------------------------------------------------------------------- -->
+  <br>
+  <!-- buyer login form -->
+  <div class="container-fluid" id="blForm">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 itsForm">
+        <div><strong><button href="#" onclick="backFunction()" class="back">&#8249;</a></strong></div>
+        <form class="text-light" id="bLoginForm">
+          <div class="text-center">
+            <label><strong>Buyer Login</strong> </label>
+          </div>
+          <div class="mb-1">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="email" required>
+            <div id="emailHelp" class="text-light">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-1">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" required>
+          </div>
+          <div class="mb-2 text-center">
+            <input type="submit" class="btn btn-success" id="bLoginSubmit">
+          </div>
+        </form>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------------------------------------------------------------------------------- -->
+  <br>
+  <!-- seller login form -->
+  <div class="container-fluid" id="slForm">
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 itsForm">
+        <div><strong><button href="#" onclick="backFunction()" class="back">&#8249;</a></strong></div>
+        <form class="text-light" id="sLoginForm">
+          <div class="text-center">
+            <label><strong>Seller Login</strong> </label>
+          </div>
+          <div class="mb-1">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" name="email" required>
+            <div id="emailHelp" class="text-light">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-1">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" required>
+          </div>
+          <div class="mb-2 text-center">
+            <button type="submit" class="btn btn-success" id="sLoginSubmit">Log In</button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-4"></div>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------------------------------------------------------------------------------- -->
+  <br>
+  <!-- buyer regestration form -->
+  <div class="container-fluid" id="brForm">
+    <div class=" container text-light itsForm">
+      <div><strong><button href="#" onclick="backFunction()" class="back">&#8249;</a></strong></div>
+      <form class="row g-3" id="bRegForm" enctype="multipart/form-data">
+        <div class="text-center">
+          <label><strong>Buyer Registration</strong></label>
+        </div>
+        <div class="col-sm-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input required type="email" class="form-control" name="email">
+        </div>
+        <div class="col-sm-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input required type="password" class="form-control" name="password">
+        </div>
+        <div class="col-sm-6">
+          <label for="inputEmail4" class="form-label">First Name</label>
+          <input required type="text" class="form-control" name="firstName">
+        </div>
+        <div class="col-sm-6">
+          <label for="inputPassword4" class="form-label">Second Name</label>
+          <input required type="text" class="form-control" name="secondName">
+        </div>
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Address</label>
+          <input required type="text" class="form-control" name="address" placeholder="1234 Main St">
+        </div>
+        <div class="col-sm-6">
+          <label for="inputCity" class="form-label">City</label>
+          <input required type="text" class="form-control" name="city">
+        </div>
+        <div class="col-sm-4">
+          <label for="inputState" class="form-label">State</label>
+          <select id="inputState" class="form-select" name="state">
+            <option>Andra Pradesh</option>
+            <option>Arunachal Pradesh</option>
+            <option>Assam</option>
+            <option>Bihar</option>
+            <option>Chhattisgarh</option>
+            <option>Goa</option>
+            <option>Gujarat</option>
+            <option>Haryana</option>
+            <option>Himachal Pradesh</option>
+            <option>Jammu and Kashmir</option>
+            <option>Jharkhand</option>
+            <option>Karnataka</option>
+            <option>Kerala</option>
+            <option>Madya Pradesh</option>
+            <option>Maharashtra</option>
+            <option>Manipur</option>
+            <option>Meghalaya</option>
+            <option>Mizoram</option>
+            <option>Nagaland</option>
+            <option>Orissa</option>
+            <option>Punjab</option>
+            <option>Rajasthan</option>
+            <option>Sikkim</option>
+            <option>Tamil Nadu</option>
+            <option>Telagana</option>
+            <option>Tripura</option>
+            <option>Uttaranchal</option>
+            <option>Uttar Pradesh</option>
+            <option>West Bengal</option>
+            <option>Chandigarh</option>
+            <option>Delhi</option>
+          </select>
+        </div>
+
+        <div class="col-sm-2">
+          <label for="inputZip" class="form-label">Mobile No.</label>
+          <input type="text" class="form-control" name="phNumber" required>
+        </div>
+        <div class="col-sm-12">
+          <div class="input-group mb-3">
+            <!-- <div class="input-group-prepend"> -->
+              <span class="input-group-text" id="inputGroupFileAddon01">Profile Pic</span>
+            <!-- </div> -->
+            <div class="form-file">
+              <input type="file" class="form-file-input" id="imagePic" name="imagePic" aria-describedby="inputGroupFileAddon01">
+              <label class="form-file-label" for="inputGroupFile01">
+                <span class="form-file-text">Choose file...</span>
+                <span class="form-file-button" >Browse</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-primary" id="bRegSubmit">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------------------------------------------------------------------------------- -->
+  <br>
+  <!-- seller regestration form -->
+  <div class="container-fluid" id="srForm">
+    <div class="container text-light itsForm">
+      <div><strong><button href="#" onclick="backFunction()" class="back">&#8249;</a></strong></div>
+      <form class="row g-3" id="sRegForm" enctype="multipart/form-data">
+        <div class="text-center">
+          <label><strong>Seller Registration</strong></label>
+        </div>
+        <div class="col-sm-6">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input required type="email" class="form-control" name="email">
+        </div>
+        <div class="col-sm-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input required type="password" class="form-control" name="password">
+        </div>
+        <div class="col-sm-6">
+          <label for="inputEmail4" class="form-label">First Name</label>
+          <input required type="text" class="form-control" name="firstName">
+        </div>
+        <div class="col-sm-6">
+          <label for="inputPassword4" class="form-label">Second Name</label>
+          <input required type="text" class="form-control" name="secondName">
+        </div>
+        <div class="col-4">
+          <label for="inputAddress" class="form-label">Shop Name</label>
+          <input required type="text" class="form-control" name="shopName" placeholder="1234 Main St">
+        </div>
+        <div class="col-8">
+          <label for="inputAddress" class="form-label">Shop Address</label>
+          <input required type="text" class="form-control" name="shopAddress" placeholder="1234 Main St">
+        </div>
+        <div class="col-sm-6">
+          <label for="inputCity" class="form-label">City</label>
+          <input required type="text" class="form-control" name="city">
+        </div>
+        <div class="col-sm-4">
+          <label for="inputState" class="form-label">State</label>
+          <select id="inputState" class="form-select" name="state">
+            <option>Andra Pradesh</option>
+            <option>Arunachal Pradesh</option>
+            <option>Assam</option>
+            <option>Bihar</option>
+            <option>Chhattisgarh</option>
+            <option>Goa</option>
+            <option>Gujarat</option>
+            <option>Haryana</option>
+            <option>Himachal Pradesh</option>
+            <option>Jammu and Kashmir</option>
+            <option>Jharkhand</option>
+            <option>Karnataka</option>
+            <option>Kerala</option>
+            <option>Madya Pradesh</option>
+            <option>Maharashtra</option>
+            <option>Manipur</option>
+            <option>Meghalaya</option>
+            <option>Mizoram</option>
+            <option>Nagaland</option>
+            <option>Orissa</option>
+            <option>Punjab</option>
+            <option>Rajasthan</option>
+            <option>Sikkim</option>
+            <option>Tamil Nadu</option>
+            <option>Telagana</option>
+            <option>Tripura</option>
+            <option>Uttaranchal</option>
+            <option>Uttar Pradesh</option>
+            <option>West Bengal</option>
+            <option>Chandigarh</option>
+            <option>Delhi</option>
+          </select>
+        </div>
+
+        <div class="col-sm-2">
+          <label for="inputZip" class="form-label">Mobile No.</label>
+          <input type="text" class="form-control" name="phNumber" required>
+        </div>
+        <div class="form-file">
+          <input type="file" class="form-file-input" id="imagePic" name="imagePic">
+          <label class="form-file-label" for="customFile">
+            <span class="form-file-text">Choose file...</span>
+            <span class="form-file-button">Browse</span>
+          </label>
+        </div>
+
+        <div class="col-12 text-center">
+          <button type="submit" class="btn btn-primary" id="sRegSubmit">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <br>
+  <!-- ------------------------------------------------------------------------------------------------------------------------- -->
+  <!-- if looged in then welcome user -->
+  
+
+  
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="./js/bootstrap.min.js"></script>
+  <script src="./index.js"></script>
+</body>
+
+</html>

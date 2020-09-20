@@ -1,0 +1,104 @@
+
+.frontPage{
+    background-color: #95a7ad;
+    background-image:url(./pics/Shopping-Queue2.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 75% 50%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.945);
+}
+.navbar{
+    padding: 0px
+}
+
+.nav-item{
+    padding:0px 20px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color:white !important;
+}
+
+.nav-link{
+    color:white !important;
+}
+
+.nav-item:hover{
+    background: gray;
+    border-radius: 5px;
+    font-weight: 500;
+    color: black;
+}
+
+.logo{
+    margin: 0px 20px;
+}
+
+.welcomeText{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+.shopingQueue{
+    margin: 40px 0px;
+    border-radius: 10px;
+    width:95%
+}
+
+.reglog{
+    padding: 100px;
+}
+
+button{
+    margin:5px 20px;
+}
+
+
+#bLoginForm label{
+    font-size: 1.5rem;
+}
+
+.itsForm{
+    background-color: rgba(0, 0, 0, 0.205);
+    padding: 5px;
+    border-radius: 10px;
+}
+
+.ip{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#blForm, 
+#slForm,
+#srForm, 
+#brForm{
+    display: none;
+}
+
+.back{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #f1f1f1;
+    color: black;
+    border: none;
+    border-radius: 50%;
+}
+
+.back:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+@media only screen and (max-width: 768px){
+    .welcomeText{
+        font-size: 1.2rem;
+    }
+
+    .reglog{
+        padding: 30px;
+    }
+}
+

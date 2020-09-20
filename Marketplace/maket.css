@@ -1,0 +1,44 @@
+.navbar{
+    padding: 0px
+}
+
+.nav-item{
+    padding:0px 20px;
+    font-family: sans-serif;
+    font-weight: 400;
+    color:white !important;
+}
+
+.nav-link{
+    color:white !important;
+}
+
+.nav-item:hover{
+    background: gray;
+    border-radius: 5px;
+    font-weight: 500;
+    color: black;
+}
+
+.logo{
+    margin: 0px 20px;
+}
+
+.productLink{
+    text-decoration: none;
+    color: white;
+}
+
+.cartCount{
+    width: 50% !important;
+}
+
+ .simplebuttons{
+    margin: 5px;
+} 
+
+@media only screen and (max-width: 768px){
+    .cartCoutn{
+        width: 100%;
+    }
+}

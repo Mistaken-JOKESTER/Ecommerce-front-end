@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="./buyer.css">
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark text-white sticky-md-top">
+        <div class="container-fluid">
+          <a class="navbar-brand logo"><img src="../pics/logo.png" alt="" srcset=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto mb-2 mb-lg-0 text-center">
+              <li class="nav-item">
+                <a class="nav-link" href="../Marketplace/market.html">Market</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+<!-- ---------------------------------------------------------------------------------------------------------------- -->
+<br>      
+
+<div id = 'alert'></div>
+
+
+
+
+<div class="container-fluid">
+        <form action="" id="profile">
+          <div class="row">
+              <div class="col-md-4 text-center">
+                <div class="form-file">
+                    <label class="form-file-label" for="imagePic">
+                        <img  alt="" style="width: 200px; height:200px; border-radius: 50%;" id="avatar">
+                    </label>
+                    <input type="file" class="form-file-input" name="imagePic" id="imagePic" style="height: 200px; visibility: hidden;">
+                    
+                  </div>
+                 
+              </div>
+              <div class="col-sm-8">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">First Name</span>
+                            <input type="text" class="form-control" name="firstName" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">First Name</span>
+                            <input type="text" class="form-control" name="secondName" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Mobile</span>
+                            <input type="text" class="form-control" name="phNumber" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">City</span>
+                            <input type="text" class="form-control" name="city" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Adress</span>
+                            <input type="text" class="form-control" name="address" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon1">Email</span>
+                            <input type="text" class="form-control" name="email" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </div>
+                    
+                </div>
+              </div>
+          </div>
+        </form>
+      </div>
+      <hr>
+      <br>
+      <div class="continer text-center">
+        <div class="btn-group " role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-success" onclick="updateMyProfile()" id='update'>Update Profile</button>
+            <button type="button" class="btn btn-danger" id="delete" onclick="deleteMyProfile()">Delete Account</button>
+          </div>
+      </div>
+
+      <div class="continer text-center" id="updateProfile">
+        <button type="button" class="btn btn-warning" onclick="updateIt()">Save</button>
+      </div>
+
+      <div class="continer text-center" id="deleteProfile">
+        <button type="button" class="btn btn-warning" onclick="deleteIt()">Confirm Delete</button>
+      </div>
+
+
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="./buyer.js"></script>
+</body>
+</html>

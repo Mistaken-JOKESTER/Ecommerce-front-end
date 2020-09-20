@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="./seller.css">
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark text-white sticky-md-top">
+    <div class="container-fluid">
+      <a class="navbar-brand logo"><img src="../pics/logo.png" alt="" srcset=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto mb-2 mb-lg-0 text-center">
+          <li class="nav-item">
+            <a class="nav-link" href="../Marketplace/market.html">Market</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- ---------------------------------------------------------------------------------------------------------------- -->
+  <br>
+
+  <div id='alert'></div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 text-center">
+        <img alt="" style="width: 300px; height:300px; border-radius: 50%;" id="avatar">
+      </div>
+      <div class="col-md-6 text-center align-middle">
+        <div class="p-2"><button type="button" class="btn btn-primary btn-md btn-block md-4" data-toggle="modal" data-target="#exampleModal">Profile</button></div>
+        <div class="p-2"><button type="button" class="btn btn-info btn-md btn-block md-4">View Products</button></div>
+        <div class="p-2"><button type="button" class="btn btn-danger btn-md btn-block md-4" onclick="deleteIt()">Delete Profile</button></div>
+        <div class="p-2"><button type="button" class="btn btn-secondary btn-md btn-block md-4" onclick="logout()">Log Out</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <form action="" id="profile">
+              <div class="row">
+
+                <div class="col-md-4 text-center">
+                  <div class="form-file">
+                    <label class="form-file-label" for="imagePic">
+                      <img alt="" style="width: 200px; height:200px; border-radius: 50%;" id="avatarpic">
+                    </label>
+                    <input type="file" class="form-file-input" name="imagePic" id="imagePic"
+                      style="height: 200px; visibility: hidden;">
+                  </div>
+                  <br>
+                </div>
+
+                <div class="col-sm-8">
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">First Name</span>
+                        <input type="text" class="form-control" name="firstName" aria-label="Username"
+                          aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Second Name</span>
+                        <input type="text" class="form-control" name="secondName" aria-label="Username"
+                          aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Mobile</span>
+                        <input type="text" class="form-control" name="phNumber" aria-label="Username"
+                          aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">City</span>
+                        <input type="text" class="form-control" name="city" aria-label="Username"
+                          aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Address</span>
+                        <input type="text" class="form-control" name="shopAddress" aria-label="Username"
+                          aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-sm-8">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Email</span>
+                        <input type="text" class="form-control" name="email" aria-label="Username"
+                          aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+                    <div class="col-sm-8">
+                      <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">ShopName</span>
+                        <input type="text" class="form-control" name="shopName" aria-label="Username"
+                          aria-describedby="basic-addon1">
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="save" onclick="updateIt()">Save changes</button>
+          <button type="button" class="btn btn-primary" id="updateProfile" onclick="updateMyProfile()">Edit Profile</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="./seller.js"></script>
+</body>
+
+</html>
