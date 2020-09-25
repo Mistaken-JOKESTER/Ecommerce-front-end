@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../seller.css">
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark text-white sticky-md-top">
+        <div class="container-fluid">
+            <a class="navbar-brand logo"><img src="../../pics/logo.png" alt="" srcset=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav mr-auto mb-2 mb-lg-0 text-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../seller.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- ---------------------------------------------------------------------------------------------------------------- -->
+    <br>
+
+    <div class="conatiner">
+        <div class="row">
+            <div class="col-12 text-center">
+                <button type="button" class="btn btn-outline-success" data-toggle="modal"
+                    data-target="#addproductModal">Add new porduct</button>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+    <!-- ----------------------------------------------------------------------------------------------------- -->
+    <div class="modal fade" id="addproductModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-header bg-dark text-light">
+                    <h5 class="modal-title" id="exampleModalLabel">Product Regestration</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body bg-info">
+                    <div class="container-fluid">
+                        <form id="productRegForm">
+                            <div class="row text-center">
+                                <div id='alert'></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <label for="inputEmail4" class="form-label">Name</label>
+                                    <input required type="text" class="form-control" name="name">
+                                </div>
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-5">
+                                    <label for="inputPassword4" class="form-label">Price</label>
+                                    <input required type="Number" class="form-control" name="price" placeholder="in Rs.">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <label class="form-label">Category</label>
+                                    <select id="inputCategory" class="form-select" name="category">
+                                        <option value="Clothing">Clothing</option>
+                                        <option value="AutoMobile">AutoMobile</option>
+                                        <option value="Electronics">Electronics</option>
+                                        <option value="Etables">Etables</option>
+                                        <option value="Sports">Sports</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-5">
+                                    <label for="inputPassword4" class="form-label">Stock</label>
+                                    <input required type="Number" class="form-control" name="stock" placeholder="Max stock u have">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="mb-3">
+                                        <label class="form-label">Discription</label>
+                                        <textarea class="form-control" name="discription" rows="3"></textarea>
+                                      </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-12">
+                                <div class="input-group mb-3">
+                                    <!-- <div class="input-group-prepend"> -->
+                                    <span class="input-group-text" id="inputGroupFileAddon01">Product Pic</span>
+                                    <!-- </div> -->
+                                    <div class="form-file">
+                                        <input type="file" class="form-file-input" id="imagePic" name="imagePic"
+                                            aria-describedby="inputGroupFileAddon01">
+                                        <label class="form-file-label" for="inputGroupFile01">
+                                            <span class="form-file-text">Choose file...</span>
+                                            <span class="form-file-button">Browse</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button class="btn btn-primary" id="productRegSubmit">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row" id="displayProducts">
+
+        </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="./porduct.js"></script>
+</body>
+
+</html>

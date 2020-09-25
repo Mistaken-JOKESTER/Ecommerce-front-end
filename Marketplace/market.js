@@ -186,28 +186,18 @@ function getProduct(_id){
                     <div class='text-center'>
                         <img class='img-fluid' src="data:image/jpeg;base64,${response.data.productAvatar}" style=" alt = "${response.data.name} image">
                     </div>
-                    <div>
-                        <dl class="row text-left">
-                            <dt class="col-sm-3">Description</dt>
-                            <dd class="col-sm-9">${response.data.discription}</dd>
-                            
-                            <dt class="col">Price</dt>
-                            <dd class="col"><p>$${response.data.price}</p></dd>
-                  
-                            <dt class="col">Stock</dt>
-                            <dd class="col">${response.data.stock}</dd>
-                  
-                            <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
-                            <dd class="col-sm-9">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
-                  
-                            <dt class="col-sm-3">Nesting</dt>
-                            <dd class="col-sm-9">
-                                <dl class="row">
-                                    <dt class="col-sm-4">Nested definition list</dt>
-                                    <dd class="col-sm-8">Aenean posuere, tortor sed cursus feugiat, nunc augue blandit nunc.</dd>
-                                </dl>
-                            </dd>
-                        </dl>
+                    <div class='container'>
+                        <div class="row">
+                            <div class="col-3"><strong>Price:</strong></div>
+                            <div class="col-3"><p>$${response.data.price}</p></div>
+                            <div class="col-3"><strong>Stock:</strong></div>
+                            <div class="col-3"><p>${response.data.stock}</p></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12"><strong>Discription:-</strong></div>
+                            <div class="col-12">${response.data.discription}</div>
+                        </div>
+                    </div>
                     </div>
                 </div>
                 <div class="modal-footer">
