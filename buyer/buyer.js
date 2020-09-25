@@ -12,7 +12,7 @@ window.onload = function (){
     } else {
         axios({
             method:'get',
-            url:'http://localhost:3000/buyer/profile',
+            url:'https://asroot-ecommerce.herokuapp.com/buyer/profile',
             headers:{
                 auth: buyerMMartToken
             }
@@ -82,7 +82,7 @@ function updateIt(){
         formData.append(profile.elements[x].name, profile.elements[x].value)  
     }
 
-    axios.post('http://localhost:3000/buyer/update', formData, contentType)
+    axios.post('https://asroot-ecommerce.herokuapp.com/buyer/update', formData, contentType)
         .then(response =>{
             console.log(response)
             if(response.data.error){
@@ -104,7 +104,7 @@ function deleteIt(){
     console.log('you are clicked')
     axios({
         method:'delete',
-        url:'http://localhost:3000/buyer/delete',
+        url:'https://asroot-ecommerce.herokuapp.com/buyer/delete',
         headers:{
             auth: buyerMMartToken
         }

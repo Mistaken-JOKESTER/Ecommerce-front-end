@@ -11,7 +11,7 @@ window.onload = function (){
     } else {
         axios({
             method:'get',
-            url:'http://localhost:3000/seller/profile',
+            url:'https://asroot-ecommerce.herokuapp.com/seller/profile',
             headers:{
                 auth: sellerMMartToken
             }
@@ -87,7 +87,7 @@ function updateIt(){
         formData.append(profile.elements[x].name, profile.elements[x].value)  
     }
 
-    axios.post('http://localhost:3000/seller/update', formData, contentType)
+    axios.post('https://asroot-ecommerce.herokuapp.com/seller/update', formData, contentType)
         .then(response =>{
             console.log(response)
             if(response.data.error){
@@ -109,7 +109,7 @@ function deleteIt(){
     console.log('you are clicked')
     axios({
         method:'delete',
-        url:'http://localhost:3000/seller/delete',
+        url:'https://asroot-ecommerce.herokuapp.com/seller/delete',
         headers:{
             auth: sellerMMartToken
         }
@@ -145,7 +145,7 @@ function deleteIt(){
 function logout(){
     axios({
         method:'post',
-        url: 'http://localhost:3000/seller/logout', 
+        url: 'https://asroot-ecommerce.herokuapp.com/seller/logout', 
         headers:{
             auth:sellerMMartToken
         }

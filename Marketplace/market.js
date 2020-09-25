@@ -17,7 +17,7 @@ category.addEventListener('change', ()=>{
     }
     axios({
         method: 'post',
-        url: 'http://localhost:3000/marketPlace/bycategory',
+        url: 'https://asroot-ecommerce.herokuapp.com/marketPlace/bycategory',
         params: {
             category: category.value
         }
@@ -69,7 +69,7 @@ function loadBuyer(){
     if(buyerMMartToken){
         axios({
             method: 'get',
-            url: 'http://localhost:3000/buyer/welcome',
+            url: 'https://asroot-ecommerce.herokuapp.com/buyer/welcome',
             headers: {
                 auth: buyerMMartToken
             }
@@ -98,7 +98,7 @@ function loadBuyer(){
 function loadMarket(){
     axios({
         method: 'get',
-        url:'http://localhost:3000/marketplace'
+        url:'https://asroot-ecommerce.herokuapp.com/marketplace'
     }).then(response =>{
         console.log(response)
         if(response.data.error){
@@ -142,7 +142,7 @@ function loadMarket(){
 function logOut(){
     axios({
         method:'post',
-        url: 'http://localhost:3000/buyer/logout', 
+        url: 'https://asroot-ecommerce.herokuapp.com/buyer/logout', 
         headers:{
             auth:buyerMMartToken
         }
@@ -168,7 +168,7 @@ function logOut(){
 function getProduct(_id){
     axios({
         method:'get',
-        url:'http://localhost:3000/marketPlace/product',
+        url:'https://asroot-ecommerce.herokuapp.com/marketPlace/product',
         params:{
             productID: _id
         }
@@ -248,7 +248,7 @@ function addToCart(id){
     console.log(count.value)
     axios({
         method:'post',
-        url:'http://localhost:3000/buyer/addToCart',
+        url:'https://asroot-ecommerce.herokuapp.com/buyer/addToCart',
         headers:{
             auth: buyerMMartToken
         },
@@ -272,7 +272,7 @@ function buyIt(id){
         const count = document.getElementById('itemCount')
         axios({
             method:'post',
-            url:'http://localhost:3000/buyer/directbuy',
+            url:'https://asroot-ecommerce.herokuapp.com/buyer/directbuy',
             headers:{
                 auth: buyerMMartToken
             }, 
@@ -318,7 +318,7 @@ function buyIt(id){
         }
         axios({
             method:'post',
-            url:'http://localhost:3000/marketPlace/product/directbuy', 
+            url:'https://asroot-ecommerce.herokuapp.com/marketPlace/product/directbuy', 
             data:{
                 address: noLoignAddress.value,
                 product:{
@@ -362,7 +362,7 @@ function showCart(){
     if(buyerMMartToken){
         axios({
             method:'get',
-            url:'http://localhost:3000/buyer/viewcart',
+            url:'https://asroot-ecommerce.herokuapp.com/buyer/viewcart',
             headers: {
                 auth:buyerMMartToken
             }
@@ -401,7 +401,7 @@ function showCart(){
 function removeFromCart(id){
     axios({
         method:'post',
-        url:'http://localhost:3000/buyer/removeFromCart',
+        url:'https://asroot-ecommerce.herokuapp.com/buyer/removeFromCart',
         headers:{
             auth:buyerMMartToken
         },
@@ -420,7 +420,7 @@ function emptyCart(){
     document.getElementById('weareDiable').disabled = true
     axios({
         method:'get',
-        url:'http://localhost:3000/buyer/emptyCart',
+        url:'https://asroot-ecommerce.herokuapp.com/buyer/emptyCart',
         headers:{
             auth: buyerMMartToken
         }
@@ -441,7 +441,7 @@ function checkout(){
     document.getElementById('weareDiable2').disabled = true
     axios({
         method:'get',
-        url:'http://localhost:3000/buyer/checkout',
+        url:'https://asroot-ecommerce.herokuapp.com/buyer/checkout',
         headers:{
             auth: buyerMMartToken
         }

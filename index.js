@@ -22,7 +22,7 @@ bl.addEventListener('click', () =>{
     if(buyerMMartToken){
         axios({
             method:'get',
-            url:'http://localhost:3000/buyer/welcome',
+            url:'https://asroot-ecommerce.herokuapp.com/buyer/welcome',
             headers:{
                 'auth':buyerMMartToken
             }
@@ -54,7 +54,7 @@ br.addEventListener('click', () =>{
     if(buyerMMartToken){
         axios({
             method:'get',
-            url:'http://localhost:3000/buyer/welcome',
+            url:'https://asroot-ecommerce.herokuapp.com/buyer/welcome',
             headers:{
                 'auth':buyerMMartToken
             }
@@ -86,7 +86,7 @@ sl.addEventListener('click', () =>{
     if(sellerMMartToken){
         axios({
             method:'get',
-            url:'http://localhost:3000/seller/welcome',
+            url:'https://asroot-ecommerce.herokuapp.com/seller/welcome',
             headers:{
                 'auth':sellerMMartToken
             }
@@ -119,7 +119,7 @@ sr.addEventListener('click', () =>{
     if(sellerMMartToken){
         axios({
             method:'get',
-            url:'http://localhost:3000/seller/welcome',
+            url:'https://asroot-ecommerce.herokuapp.com/seller/welcome',
             headers:{
                 auth:sellerMMartToken
             }
@@ -165,7 +165,7 @@ bLoginSubmit.addEventListener('click', (e) => {
     console.log(bLoginForm.email.value, bLoginForm.password.value)
     axios({
         method: 'post',
-        url: 'http://localhost:3000/buyer/login',
+        url: 'https://asroot-ecommerce.herokuapp.com/buyer/login',
         data:{
             email: bLoginForm.email.value,
             password: bLoginForm.password.value
@@ -199,7 +199,7 @@ sLoginSubmit.addEventListener('click', (e) => {
     console.log(sLoginForm.email.value, sLoginForm.password.value)
     axios({
         method: 'post',
-        url: 'http://localhost:3000/seller/login',
+        url: 'https://asroot-ecommerce.herokuapp.com/seller/login',
         data:{
             email: sLoginForm.email.value,
             password: sLoginForm.password.value
@@ -241,7 +241,7 @@ bRegSubmit.addEventListener('click', (e)=>{
         }
         formData.append(bRegForm.elements[x].name, bRegForm.elements[x].value)  
     }
-    axios.post('http://localhost:3000/buyer/register', formData, contentType)
+    axios.post('https://asroot-ecommerce.herokuapp.com/buyer/register', formData, contentType)
     .then(response => {
         console.log(response)
         if(response.data.error){
@@ -296,7 +296,7 @@ sRegSubmit.addEventListener('click', (e)=>{
         formData.append(sRegForm.elements[x].name, sRegForm.elements[x].value)  
     }
 
-    axios.post('http://localhost:3000/seller/register',formData, contentType)
+    axios.post('https://asroot-ecommerce.herokuapp.com/seller/register',formData, contentType)
     .then(response => {
         console.log(response)
         if(response.data.error){

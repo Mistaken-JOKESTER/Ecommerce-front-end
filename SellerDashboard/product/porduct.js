@@ -84,7 +84,7 @@ productRegSubmit.addEventListener('click',(e)=> {
         formData.append(productRegForm.elements[x].name, productRegForm.elements[x].value)  
     }
 
-    axios.post('http://localhost:3000/seller/addProduct', formData, contentType)
+    axios.post('https://asroot-ecommerce.herokuapp.com/seller/addProduct', formData, contentType)
     .then(response => {
         console.log(response)
         if(response.data.error){
