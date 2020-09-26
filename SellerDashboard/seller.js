@@ -16,7 +16,6 @@ window.onload = function (){
                 auth: sellerMMartToken
             }
         }) .then(response => {
-            console.log(response)
             if(response.data.error){
                 alert.innerHTML = `
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -89,7 +88,7 @@ function updateIt(){
 
     axios.post('https://asroot-ecommerce.herokuapp.com/seller/update', formData, contentType)
         .then(response =>{
-            console.log(response)
+            
             if(response.data.error){
                 alert.innerHTML = `
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -106,7 +105,6 @@ function updateIt(){
 }
 
 function deleteIt(){
-    console.log('you are clicked')
     axios({
         method:'delete',
         url:'https://asroot-ecommerce.herokuapp.com/seller/delete',

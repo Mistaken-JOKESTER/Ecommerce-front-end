@@ -6,14 +6,13 @@ const displayProducts = document.getElementById('displayProducts')
 
 window.onload = function(){
     axios({
-        url:'http:/localhost:3000/seller/viewProducts',
+        url:'https://asroot-ecommerce.herokuapp.com/seller/viewProducts',
         method:'post',
         headers:{
             auth: sellerMMartToken
         }
     }).then(response =>{
         displayProducts.innerHTML = ''
-        console.log(response)
         response.data.products.forEach(product => {
             displayProducts.innerHTML += `
                 <div class="card p-3 m-3" style="width: 18rem;">
@@ -74,7 +73,7 @@ productRegSubmit.addEventListener('click',(e)=> {
     var contentType = {headers: {'Content-Type': 'multipart/form-data', auth: sellerMMartToken}}
     var formData = new FormData
     for(const x in productRegForm){
-        console.log(productRegForm.elements[x].name,productRegForm.elements[x].value)
+        
         if(productRegForm.elements[x].id == 'productRegSubmit')
           break
         if(productRegForm.elements[x].id == 'imagePic'){
@@ -86,14 +85,13 @@ productRegSubmit.addEventListener('click',(e)=> {
 
     axios.post('https://asroot-ecommerce.herokuapp.com/seller/addProduct', formData, contentType)
     .then(response => {
-        console.log(response)
+       
         if(response.data.error){
             errorAlert.innerHTML = ''
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            console.log(response)
-            console.log(response.data.error.message)
+            
             const errors = response.data.error.message.split(', ')
-            console.log(errors)
+            
             for(const x in errors) {
                 errorAlert.innerHTML += `
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -106,7 +104,6 @@ productRegSubmit.addEventListener('click',(e)=> {
             
             
         } else {
-            console.log('done')
             productRegForm.innerHTML ='<br><br><br><h3 class="text-center text-secondary">your product is registed and you will redirected to proudcts page</h3>'
             setInterval(()=>{
                 location.reload()
@@ -120,7 +117,7 @@ productRegSubmit.addEventListener('click',(e)=> {
 
 function removeProduct(id){
     axios({
-        url:'http:/localhost:3000/seller/removeProduct',
+        url:'https://asroot-ecommerce.herokuapp.com/seller/removeProduct',
         method:'post',
         headers:{
             auth:sellerMMartToken
@@ -129,7 +126,7 @@ function removeProduct(id){
             productID:id.toString()
         }
     }).then(response =>{
-        console.log(response)
+        
         if(response.error){
             document.getElementById(`product${id}`).innerHTML += '<p>Something went wrong refresh and try agian</p>'
         } else{

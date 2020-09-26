@@ -27,7 +27,7 @@ bl.addEventListener('click', () =>{
                 'auth':buyerMMartToken
             }
         }).then(response => {
-            console.log(response)
+            
             if(response.data.error){
                 localStorage.removeItem('buyerMMartToken')
                 reglog.style.display = 'none'
@@ -59,7 +59,7 @@ br.addEventListener('click', () =>{
                 'auth':buyerMMartToken
             }
         }).then(response => {
-            console.log(response)
+            
             if(response.data.error){
                 localStorage.removeItem('buyerMMartToken')
                 reglog.style.display = 'none'
@@ -91,7 +91,7 @@ sl.addEventListener('click', () =>{
                 'auth':sellerMMartToken
             }
         }).then(response => {
-            console.log(response)
+            
             if(response.data.error){
                 localStorage.removeItem('sellerMMartToken')
                 reglog.style.display = 'none'
@@ -104,7 +104,7 @@ sl.addEventListener('click', () =>{
                 `
                 window.setInterval(() => {
                     location.replace('./SellerDashboard/seller.html')
-                    console.log('redirect')
+                    
                 }, 7000)
             }
         })
@@ -124,7 +124,7 @@ sr.addEventListener('click', () =>{
                 auth:sellerMMartToken
             }
         }).then(response => {
-            console.log(response)
+            
             if(response.data.error){
                 localStorage.removeItem('sellerMMartToken')
                 reglog.style.display = 'none'
@@ -148,7 +148,6 @@ sr.addEventListener('click', () =>{
 
 
 function backFunction(){
-    console.log('clikced')
     reglog.style.display='block'
     blForm.style.display = 'none'
     brForm.style.display = 'none'
@@ -162,7 +161,6 @@ function backFunction(){
 bLoginSubmit.addEventListener('click', (e) => {
 
     e.preventDefault()
-    console.log(bLoginForm.email.value, bLoginForm.password.value)
     axios({
         method: 'post',
         url: 'https://asroot-ecommerce.herokuapp.com/buyer/login',
@@ -171,7 +169,6 @@ bLoginSubmit.addEventListener('click', (e) => {
             password: bLoginForm.password.value
         }
     }) .then(response =>{
-        console.log(response.data.token)
         if(response.data.error){
             errorAlert.innerHTML = `
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -196,7 +193,6 @@ bLoginSubmit.addEventListener('click', (e) => {
 sLoginSubmit.addEventListener('click', (e) => {
 
     e.preventDefault()
-    console.log(sLoginForm.email.value, sLoginForm.password.value)
     axios({
         method: 'post',
         url: 'https://asroot-ecommerce.herokuapp.com/seller/login',
@@ -205,7 +201,6 @@ sLoginSubmit.addEventListener('click', (e) => {
             password: sLoginForm.password.value
         }
     }) .then(response =>{
-        console.log(response.data.token)
         if(response.data.error){
             errorAlert.innerHTML = `
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -243,14 +238,14 @@ bRegSubmit.addEventListener('click', (e)=>{
     }
     axios.post('https://asroot-ecommerce.herokuapp.com/buyer/register', formData, contentType)
     .then(response => {
-        console.log(response)
+        
         if(response.data.error){
             errorAlert.innerHTML = ''
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            console.log(response)
-            console.log(response.data.error.message)
+            
+            
             const errors = response.data.error.message.split(', ')
-            console.log(errors)
+        
             for(const x in errors) {
                 errorAlert.innerHTML += `
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -298,14 +293,14 @@ sRegSubmit.addEventListener('click', (e)=>{
 
     axios.post('https://asroot-ecommerce.herokuapp.com/seller/register',formData, contentType)
     .then(response => {
-        console.log(response)
+        
         if(response.data.error){
             errorAlert.innerHTML = ''
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            console.log(response)
-            console.log(response.data.error.message)
+            
+            
             const errors = response.data.error.message.split(', ')
-            console.log(errors)
+            
             for(const x in errors) {
                 errorAlert.innerHTML += `
                 <div class="alert alert-warning alert-dismissible fade show" role="alert">

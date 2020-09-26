@@ -23,9 +23,9 @@ category.addEventListener('change', ()=>{
         }
     })
     .then(response =>{
-        console.log(response)
+        
         if(response.data.error){
-            console.log('error')
+            
             alertMessage.innerHTML = `
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
             ${response.data.error.message}
@@ -74,7 +74,7 @@ function loadBuyer(){
                 auth: buyerMMartToken
             }
         }).then(response =>{
-            console.log(response) 
+             
             if(response){
                 logedIn.innerHTML =`
                 <button type="button" class="btn" style=" border-radius: 50%;" id="myProfile"><a href="../buyer/buyer.html"><img src="data:image/png;base64, ${response.data.avatar}"  alt="PP" style="width:40px; height:40px; border-radius: 50%;;" /></a></button>
@@ -88,7 +88,6 @@ function loadBuyer(){
 
         }).catch(e =>{
             console.log(e)
-            console.log('whooo')
         } )
     } else {
         logedIn.innerHTML = `<a href="../index.html"><button type="button" class="btn btn-outline-success">Login/Register</button></a>`
@@ -100,9 +99,9 @@ function loadMarket(){
         method: 'get',
         url:'https://asroot-ecommerce.herokuapp.com/marketplace'
     }).then(response =>{
-        console.log(response)
+        
         if(response.data.error){
-            console.log('error')
+            
         } else {
             alertMessage.innerHTML = `
             <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -174,7 +173,7 @@ function getProduct(_id){
         }
     })
         .then(response=>{
-            console.log(response)
+            
             productPage.innerHTML = `
                 <div class="modal-header col-12">
                     <h5 class="modal-title" id="staticBackdropLabel" style="text-transform:capitalize">${response.data.name}</h5>
@@ -245,7 +244,7 @@ function getProduct(_id){
 
 function addToCart(id){
     const count = document.getElementById('itemCount')
-    console.log(count.value)
+    
     axios({
         method:'post',
         url:'https://asroot-ecommerce.herokuapp.com/buyer/addToCart',
@@ -259,7 +258,7 @@ function addToCart(id){
             }
         }
     }) .then(response=>{
-        console.log(response)
+        
         document.getElementById('cartCount').innerHTML = response.data.cartCount
     }) .catch(e =>{
         console.log(e)
@@ -283,7 +282,7 @@ function buyIt(id){
                 }
             }
         }).then(response =>{
-            console.log(response)
+            
             if(response.data.error){
                 alertMessage.innerHTML = `
                     <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -337,7 +336,7 @@ function buyIt(id){
                         </button>
                     </div>`
             } else {
-            console.log(response)
+            
             productPage.innerHTML = `
                 <div class="modal-header col-12">
                     <h5 class="modal-title" id="staticBackdropLabel" style="text-transform:capitalize">Thank You For Shoping</h5>
@@ -368,7 +367,7 @@ function showCart(){
             }
         }).then(response =>{
             cartBody.innerHTML=''
-            console.log(response)
+            
             response.data.productsData.forEach(product =>{
                 cartBody.innerHTML +=`<hr>
                 <div class="row" id="${product.product._id}">
@@ -409,7 +408,7 @@ function removeFromCart(id){
             productID:id
         }
     }).then(response=>{
-        console.log(response)
+        
         document.getElementById(id).innerHTML= `<div class='text-center col-12'>Removed</div>`
         document.getElementById('cartCount').innerHTML = response.data.cartCount
     }).catch(e => console.log(e))
@@ -455,7 +454,7 @@ function checkout(){
                     </button>
                 </div>`
         } else {
-        console.log(response)
+        
         cartBody.innerHTML=
         cartBody.innerHTML=`
         <div class="card text-center">
